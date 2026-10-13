@@ -1,0 +1,102 @@
+tmux cheatsheet
+===============
+
+C-Space is this setup's prefix. Press it, then the next key.
+C- means Ctrl; M- means Alt. Uppercase means Shift plus that letter.
+h/j/k/l move left/down/up/right. "cfg" marks custom bindings.
+
+
+Sessions
+--------
+
+From a shell:
+
+  KEY / COMMAND                ACTION
+  --------------------------  ----------------------------
+  tmux new -s work             Start named session
+  tmux new -As work            Attach or create session
+  tmux ls                      List sessions
+  tmux attach -t work          Attach to session
+  tmux kill-session -t NAME    End named session
+
+Inside tmux:
+
+  KEY / COMMAND                ACTION
+  --------------------------  ----------------------------
+  C-Space, then d              Detach; leave session running
+  C-Space, then $              Rename current session
+  C-Space, then w              Browse sessions and windows
+
+
+Windows
+-------
+
+  KEY / COMMAND                ACTION
+  --------------------------  ----------------------------
+  C-Space, then c              Create a window
+  C-Space, then n              Next window
+  C-Space, then M-p            Previous window
+  C-Space, then ,              Rename current window
+  C-Space, then &              Close window (confirm)
+
+
+Panes
+-----
+
+  KEY / COMMAND                ACTION
+  --------------------------  ----------------------------
+  C-Space, then v              Split side by side (cfg)
+  C-Space, then s              Split top/bottom (cfg)
+  C-Space, then %              Split side by side (default)
+  C-Space, then "              Split top/bottom (default)
+  C-Space, then h/j/k/l        Move between panes (cfg)
+  C-Space, then Arrow          Move between panes (default)
+  C-Space, then H/J/K/L        Resize 5 cells (cfg)
+  C-Space, then C-Arrow        Resize 1 cell (default)
+  C-Space, then o              Cycle to next pane
+  C-Space, then z              Zoom or restore pane
+  C-Space, then x              Close pane (confirm)
+
+Repeat H/J/K/L quickly to continue resizing.
+
+
+Copy mode
+---------
+
+  KEY / COMMAND                ACTION
+  --------------------------  ----------------------------
+  C-Space, then Esc            Enter copy mode (cfg)
+  C-Space, then [              Enter copy mode (default)
+  v                            Select characters
+  C-v                          Toggle rectangular selection
+  y                            Copy selection and exit
+  H / L                        Jump to line start/end
+  / and ?                      Search forward/backward
+  n / N                        Repeat search forward/back
+  Esc                          Cancel copy mode
+  C-Space, then p              Paste buffer (cfg)
+  C-Space, then ]              Paste buffer (default)
+
+
+Configuration and help
+-----------------------
+
+  KEY / COMMAND                ACTION
+  --------------------------  ----------------------------
+  C-Space, then r              Reload this config
+  C-Space, then :              Open command prompt
+  :cheatsheet                  Open cheatsheet popup
+  C-Space, then ?              List key bindings
+
+Load the config from a pane or outside tmux:
+
+  tmux source-file ~/.config/tmux/tmux.conf
+
+
+Notes
+-----
+
+This config replaces the default C-b prefix with C-Space.
+It rebinds p to paste; use C-Space, then M-p for the previous window.
+It rebinds s to split panes; use C-Space, then w to browse sessions/windows.
+Mouse is on; windows and panes start numbering at 1.

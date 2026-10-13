@@ -18,3 +18,10 @@ either a tmux pane or a shell outside tmux:
     tmux source-file ~/.config/tmux/tmux.conf
 
 After it is loaded, press C-Space, then r to reload it from within tmux.
+
+
+Cheatsheet
+----------
+
+See CHEATSHEET for session, window, pane, and copy-mode commands.
+
