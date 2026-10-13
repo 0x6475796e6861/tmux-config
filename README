@@ -1,0 +1,20 @@
+tmux-config
+===========
+
+My tmux configuration.
+
+
+Installation
+------------
+
+tmux 3.1+ reads $XDG_CONFIG_HOME/tmux/tmux.conf when starting a server. Clone
+the repository to the standard location:
+
+    git clone git@github.com:<user>/tmux-config.git ~/.config/tmux
+
+To load the configuration into a running tmux server, run this command from
+either a tmux pane or a shell outside tmux:
+
+    tmux source-file ~/.config/tmux/tmux.conf
+
+After it is loaded, press C-Space, then r to reload it from within tmux.
